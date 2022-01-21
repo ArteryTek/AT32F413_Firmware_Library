@@ -1,8 +1,8 @@
 /**
   **************************************************************************
   * @file     main.c
-  * @version  v2.0.0
-  * @date     2021-11-26
+  * @version  v2.0.2
+  * @date     2021-12-31
   * @brief    main program
   **************************************************************************
   *                       Copyright notice & Disclaimer
@@ -40,7 +40,7 @@
   */
 
 usbd_core_type usb_core_dev;
-extern uint8_t hid_suspend_flag;
+extern __IO uint8_t hid_suspend_flag;
 void keyboard_send_string(uint8_t *string, uint8_t len);
 void system_clock_recover(void);
 void button_exint_init(void);
@@ -54,7 +54,7 @@ void usb_low_power_wakeup_config(void);
   */
 void keyboard_send_string(uint8_t *string, uint8_t len)
 {
-  uint8_t index = 0;
+  __IO uint8_t index = 0;
   for(index = 0; index < len; index ++)
   {
     while(1)
@@ -66,16 +66,17 @@ void keyboard_send_string(uint8_t *string, uint8_t len)
         break;
       }
     }
-  }
-  while(1)
-  {
-    if(g_u8tx_completed == 1)
+    while(1)
     {
-      g_u8tx_completed = 0;
-      usb_hid_keyboard_send_char(&usb_core_dev, 0x00);
-      break;
+      if(g_u8tx_completed == 1)
+      {
+        g_u8tx_completed = 0;
+        usb_hid_keyboard_send_char(&usb_core_dev, 0x00);
+        break;
+      }
     }
   }
+ 
 }
 
 /**

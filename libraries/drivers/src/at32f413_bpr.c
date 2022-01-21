@@ -1,8 +1,8 @@
 /**
   **************************************************************************
   * @file     at32f413_bpr.c
-  * @version  v2.0.0
-  * @date     2021-11-26
+  * @version  v2.0.2
+  * @date     2021-12-31
   * @brief    contains all the functions for the bpr firmware library
   **************************************************************************
   *                       Copyright notice & Disclaimer

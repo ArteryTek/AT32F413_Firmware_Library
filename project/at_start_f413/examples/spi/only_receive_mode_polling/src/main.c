@@ -1,8 +1,8 @@
 /**
   **************************************************************************
   * @file     main.c
-  * @version  v2.0.0
-  * @date     2021-11-26
+  * @version  v2.0.2
+  * @date     2021-12-31
   * @brief    main program
   **************************************************************************
   *                       Copyright notice & Disclaimer
@@ -26,7 +26,6 @@
 
 #include "at32f413_board.h"
 #include "at32f413_clock.h"
-#include <stdio.h>
 
 /** @addtogroup AT32F413_periph_examples
   * @{

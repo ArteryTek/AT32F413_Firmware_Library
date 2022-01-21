@@ -1,8 +1,8 @@
 /**
   **************************************************************************
   * @file     at32f413.h
-  * @version  v2.0.0
-  * @date     2021-11-26
+  * @version  v2.0.2
+  * @date     2021-12-31
   * @brief    at32f413 header file
   **************************************************************************
   *                       Copyright notice & Disclaimer
@@ -57,7 +57,7 @@ extern "C" {
     !defined (AT32F413CCT7)   && !defined (AT32F413RBT7)   && !defined (AT32F413RCT7) && \
     !defined (AT32FEBKC8T7)   && !defined (AT32F413TBU7)
 
-    #error "Please select first the target at32f4xx device used in your application (in at32f4xx.h file)"
+    #error "Please select first the target device used in your application (in at32f413.h file)"
 #endif
 
 #if defined (AT32F413KBU7_4) || defined (AT32F413KCU7_4) || defined (AT32F413CBU7) || \
@@ -87,7 +87,7 @@ extern "C" {
   */
 #define __AT32F413_LIBRARY_VERSION_MAJOR    (0x02) /*!< [31:24] major version */
 #define __AT32F413_LIBRARY_VERSION_MIDDLE   (0x00) /*!< [23:16] middle version */
-#define __AT32F413_LIBRARY_VERSION_MINOR    (0x00) /*!< [15:8]  minor version */
+#define __AT32F413_LIBRARY_VERSION_MINOR    (0x02) /*!< [15:8]  minor version */
 #define __AT32F413_LIBRARY_VERSION_RC       (0x00) /*!< [7:0]  release candidate */
 #define __AT32F413_LIBRARY_VERSION          ((__AT32F413_LIBRARY_VERSION_MAJOR << 24)  | \
                                              (__AT32F413_LIBRARY_VERSION_MIDDLE << 16) | \
@@ -371,7 +371,8 @@ typedef enum {ERROR = 0, SUCCESS = !ERROR} error_status;
 /**
   * @}
   */
-  
+
+#include "at32f413_def.h"
 #include "at32f413_conf.h"
 
 #ifdef __cplusplus

@@ -1,8 +1,8 @@
 /**
   **************************************************************************
   * @file     at32f413_debug.c
-  * @version  v2.0.0
-  * @date     2021-11-26
+  * @version  v2.0.2
+  * @date     2021-12-31
   * @brief    contains all the functions for the debug firmware library
   **************************************************************************
   *                       Copyright notice & Disclaimer
@@ -48,7 +48,7 @@
   */
 uint32_t debug_device_id_get(void)
 {
-    return DEBUG->pid;
+  return DEBUGMCU->pid;
 }
 
 /**
@@ -81,11 +81,11 @@ void debug_periph_mode_set(uint32_t periph_debug_mode, confirm_state new_state)
 
   if(new_state != FALSE)
   {
-    DEBUG->ctrl |= periph_debug_mode; 
+    DEBUGMCU->ctrl |= periph_debug_mode; 
   }
   else
   {
-    DEBUG->ctrl &= ~periph_debug_mode;  
+    DEBUGMCU->ctrl &= ~periph_debug_mode;  
   }    
 }
 
