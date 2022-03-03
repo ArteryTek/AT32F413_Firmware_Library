@@ -1,8 +1,8 @@
 /**
   **************************************************************************
   * @file     main.c
-  * @version  v2.0.2
-  * @date     2021-12-31
+  * @version  v2.0.3
+  * @date     2022-02-11
   * @brief    main program
   **************************************************************************
   *                       Copyright notice & Disclaimer
@@ -26,7 +26,6 @@
 
 #include "at32f413_board.h"
 #include "at32f413_clock.h"
-#include "stdio.h"
 #include "FreeRTOS.h"
 #include "task.h"
 

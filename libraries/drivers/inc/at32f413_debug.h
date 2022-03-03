@@ -1,8 +1,8 @@
 /**
   **************************************************************************
   * @file     at32f413_debug.h
-  * @version  v2.0.2
-  * @date     2021-12-31
+  * @version  v2.0.3
+  * @date     2022-02-11
   * @brief    at32f413 debug header file
   **************************************************************************
   *                       Copyright notice & Disclaimer
@@ -115,14 +115,14 @@ typedef struct
       __IO uint32_t can1_pause           : 1;/* [14] */
       __IO uint32_t i2c1_smbus_timeout   : 1;/* [15] */
       __IO uint32_t i2c2_smbus_timeout   : 1;/* [16] */
-      __IO uint32_t tim8_pause           : 1;/* [17] */
-      __IO uint32_t tim5_pause           : 1;/* [18] */
+      __IO uint32_t tmr8_pause           : 1;/* [17] */
+      __IO uint32_t tmr5_pause           : 1;/* [18] */
       __IO uint32_t reserved2            : 2;/* [20:19] */      
       __IO uint32_t can2_pause           : 1;/* [21] */
       __IO uint32_t reserved3            : 6;/* [27:22] */       
-      __IO uint32_t tim9_pause           : 1;/* [28] */
-      __IO uint32_t tim10_pause          : 1;/* [29] */
-      __IO uint32_t tim11_pause          : 1;/* [30] */
+      __IO uint32_t tmr9_pause           : 1;/* [28] */
+      __IO uint32_t tmr10_pause          : 1;/* [29] */
+      __IO uint32_t tmr11_pause          : 1;/* [30] */
       __IO uint32_t reserved4            : 1;/* [31] */       
     } ctrl_bit;
   };
