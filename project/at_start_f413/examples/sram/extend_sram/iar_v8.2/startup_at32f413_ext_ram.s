@@ -1,7 +1,7 @@
 ;**************************************************************************
 ;* @file     startup_at32f413.s
-;* @version  v2.0.3
-;* @date     2022-02-11
+;* @version  v2.0.4
+;* @date     2022-04-02
 ;* @brief    at32f413 startup file for IAR Systems
 ;**************************************************************************
 ;
@@ -65,8 +65,8 @@ __vector_table
         DCD     DMA1_Channel7_IRQHandler            ; DMA1 Channel 7
         DCD     ADC1_2_IRQHandler                   ; ADC1 & ADC2
         DCD     USBFS_H_CAN1_TX_IRQHandler          ; USB High Priority or CAN1 TX
-        DCD     USBFS_L_CAN1_RX0_IRQHandler         ; USB Low  Priority or CAN1 RX0 
-        DCD     CAN1_RX1_IRQHandler                 ; CAN1 RX1 
+        DCD     USBFS_L_CAN1_RX0_IRQHandler         ; USB Low  Priority or CAN1 RX0
+        DCD     CAN1_RX1_IRQHandler                 ; CAN1 RX1
         DCD     CAN1_SE_IRQHandler                  ; CAN1 SE
         DCD     EXINT9_5_IRQHandler                 ; EXINT Line [9:5]
         DCD     TMR1_BRK_TMR9_IRQHandler            ; TMR1 Brake and TMR9
@@ -114,8 +114,8 @@ __vector_table
         DCD     0                                   ; Reserved
         DCD     0                                   ; Reserved
         DCD     CAN2_TX_IRQHandler                  ; CAN2 TX
-        DCD     CAN2_RX0_IRQHandler                 ; CAN2 RX0 
-        DCD     CAN2_RX1_IRQHandler                 ; CAN2 RX1 
+        DCD     CAN2_RX0_IRQHandler                 ; CAN2 RX0
+        DCD     CAN2_RX1_IRQHandler                 ; CAN2 RX1
         DCD     CAN2_SE_IRQHandler                  ; CAN2 SE
         DCD     ACC_IRQHandler                      ; ACC
         DCD     USBFS_MAPH_IRQHandler               ; USB Map HP
@@ -131,14 +131,14 @@ __vector_table
         PUBWEAK Reset_Handler
         SECTION .text:CODE:REORDER:NOROOT(2)
 Reset_Handler
-; add for extend sram            
+; add for extend sram
         MOV32   R0, #0x20001000
         MOV     SP, R0
         LDR     R0, =extend_sram
         BLX     R0
         MOV32   R0, #0x08000000
         LDR     SP, [R0]
-        
+
         LDR     R0, =SystemInit
         BLX     R0
         LDR     R0, =__iar_program_start
@@ -289,15 +289,15 @@ ADC1_2_IRQHandler
 USBFS_H_CAN1_TX_IRQHandler
         B USBFS_H_CAN1_TX_IRQHandler
 
-        PUBWEAK USBFS_L_CAN1_RX0_IRQHandler 
+        PUBWEAK USBFS_L_CAN1_RX0_IRQHandler
         SECTION .text:CODE:REORDER:NOROOT(1)
-USBFS_L_CAN1_RX0_IRQHandler 
-        B USBFS_L_CAN1_RX0_IRQHandler 
+USBFS_L_CAN1_RX0_IRQHandler
+        B USBFS_L_CAN1_RX0_IRQHandler
 
-        PUBWEAK CAN1_RX1_IRQHandler 
+        PUBWEAK CAN1_RX1_IRQHandler
         SECTION .text:CODE:REORDER:NOROOT(1)
-CAN1_RX1_IRQHandler 
-        B CAN1_RX1_IRQHandler 
+CAN1_RX1_IRQHandler
+        B CAN1_RX1_IRQHandler
 
         PUBWEAK CAN1_SE_IRQHandler
         SECTION .text:CODE:REORDER:NOROOT(1)
@@ -469,15 +469,15 @@ DMA2_Channel4_5_IRQHandler
 CAN2_TX_IRQHandler
         B CAN2_TX_IRQHandler
 
-        PUBWEAK CAN2_RX0_IRQHandler 
+        PUBWEAK CAN2_RX0_IRQHandler
         SECTION .text:CODE:REORDER:NOROOT(1)
-CAN2_RX0_IRQHandler 
-        B CAN2_RX0_IRQHandler 
+CAN2_RX0_IRQHandler
+        B CAN2_RX0_IRQHandler
 
-        PUBWEAK CAN2_RX1_IRQHandler 
+        PUBWEAK CAN2_RX1_IRQHandler
         SECTION .text:CODE:REORDER:NOROOT(1)
-CAN2_RX1_IRQHandler 
-        B CAN2_RX1_IRQHandler 
+CAN2_RX1_IRQHandler
+        B CAN2_RX1_IRQHandler
 
         PUBWEAK CAN2_SE_IRQHandler
         SECTION .text:CODE:REORDER:NOROOT(1)

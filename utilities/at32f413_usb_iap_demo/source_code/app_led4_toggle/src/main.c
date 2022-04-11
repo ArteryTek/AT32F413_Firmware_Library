@@ -1,8 +1,8 @@
 /**
   **************************************************************************
   * @file     main.c
-  * @version  v2.0.3
-  * @date     2022-02-11
+  * @version  v2.0.4
+  * @date     2022-04-02
   * @brief    main program
   **************************************************************************
   *                       Copyright notice & Disclaimer
@@ -152,7 +152,7 @@ int main(void)
 {
   /* config vector table offset */
   nvic_vector_table_set(NVIC_VECTTAB_FLASH, 0x4000);
- 
+
   system_clock_config();
 
   /* config nvic priority group */

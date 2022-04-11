@@ -1,8 +1,8 @@
 /**
   **************************************************************************
   * @file     at32f413_gpio.h
-  * @version  v2.0.3
-  * @date     2022-02-11
+  * @version  v2.0.4
+  * @date     2022-04-02
   * @brief    at32f413 gpio header file
   **************************************************************************
   *                       Copyright notice & Disclaimer
@@ -47,7 +47,7 @@ extern "C" {
 /** @defgroup GPIO_pins_number_definition
   * @{
   */
-  
+
 #define GPIO_PINS_0                      0x0001 /*!< gpio pins number 0 */
 #define GPIO_PINS_1                      0x0002 /*!< gpio pins number 1 */
 #define GPIO_PINS_2                      0x0004 /*!< gpio pins number 2 */
@@ -224,7 +224,7 @@ typedef enum
 {
   GPIO_DRIVE_STRENGTH_STRONGER           = 0x01, /*!< stronger sourcing/sinking strength */
   GPIO_DRIVE_STRENGTH_MODERATE           = 0x02, /*!< moderate sourcing/sinking strength */
-  GPIO_DRIVE_STRENGTH_MAXIMUM            = 0x03  /*!< maximum sourcing/sinking strength */ 
+  GPIO_DRIVE_STRENGTH_MAXIMUM            = 0x03  /*!< maximum sourcing/sinking strength */
 } gpio_drive_type;
 
 /**
@@ -654,7 +654,7 @@ typedef struct
     {
       __IO uint32_t tmr9_gmux            : 4; /* [3:0] */
       __IO uint32_t tmr10_gmux           : 4; /* [7:4] */
-      __IO uint32_t tmr11_gmux           : 4; /* [11:8] */     
+      __IO uint32_t tmr11_gmux           : 4; /* [11:8] */
       __IO uint32_t reserved1            : 20;/* [31:12] */
     } remap3_bit;
   };

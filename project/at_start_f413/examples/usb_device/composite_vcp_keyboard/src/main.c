@@ -1,8 +1,8 @@
 /**
   **************************************************************************
   * @file     main.c
-  * @version  v2.0.3
-  * @date     2022-02-11
+  * @version  v2.0.4
+  * @date     2022-04-02
   * @brief    main program
   **************************************************************************
   *                       Copyright notice & Disclaimer
@@ -144,7 +144,7 @@ void keyboard_send_string(void *udev, uint8_t *string, uint8_t len)
       }
     }
   }
-  
+
 }
 
 /**
@@ -157,7 +157,7 @@ int main(void)
   uint16_t data_len;
 
   uint32_t timeout;
-  
+
   uint8_t send_zero_packet = 0;
 
   /* config nvic priority group */
@@ -198,7 +198,7 @@ int main(void)
 
       if(data_len == 0)
         send_zero_packet = 0;
-      
+
       timeout = 5000000;
       do
       {

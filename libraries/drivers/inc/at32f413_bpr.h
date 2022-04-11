@@ -1,8 +1,8 @@
 /**
   **************************************************************************
   * @file     at32f413_bpr.h
-  * @version  v2.0.3
-  * @date     2022-02-11
+  * @version  v2.0.4
+  * @date     2022-04-02
   * @brief    at32f413 bpr header file
   **************************************************************************
   *                       Copyright notice & Disclaimer
@@ -43,19 +43,19 @@ extern "C" {
 /** @addtogroup BPR
   * @{
   */
- 
+
 /** @defgroup BPR_flags_definition
-  * @brief bpr flag  
+  * @brief bpr flag
   * @{
   */
-  
+
 #define BPR_TAMPER_INTERRUPT_FLAG        ((uint32_t)0x00000001) /*!< bpr tamper interrupt flag */
 #define BPR_TAMPER_EVENT_FLAG            ((uint32_t)0x00000002) /*!< bpr tamper event flag */
 
 /**
   * @}
   */
-  
+
 /** @defgroup BPR_exported_types
   * @{
   */

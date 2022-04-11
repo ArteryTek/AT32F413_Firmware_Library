@@ -1,8 +1,8 @@
 /**
   **************************************************************************
   * @file     at32f413_dma.h
-  * @version  v2.0.3
-  * @date     2022-02-11
+  * @version  v2.0.4
+  * @date     2022-04-02
   * @brief    at32f413 dma header file
   **************************************************************************
   *                       Copyright notice & Disclaimer
@@ -206,7 +206,7 @@ typedef enum
   DMA_FLEXIBLE_TMR8_CH1                  = 0x70, /*!< tmr8_ch1 flexible request id */
   DMA_FLEXIBLE_TMR8_CH2                  = 0x71, /*!< tmr8_ch2 flexible request id */
   DMA_FLEXIBLE_TMR8_CH3                  = 0x72, /*!< tmr8_ch3 flexible request id */
-  DMA_FLEXIBLE_TMR8_CH4                  = 0x73, /*!< tmr8_ch4 flexible request id */  
+  DMA_FLEXIBLE_TMR8_CH4                  = 0x73, /*!< tmr8_ch4 flexible request id */
 } dma_flexible_request_type;
 
 /**
