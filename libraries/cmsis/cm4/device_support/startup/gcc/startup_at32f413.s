@@ -1,8 +1,8 @@
 /**
   ******************************************************************************
   * @file     startup_at32f413.s
-  * @version  v2.0.4
-  * @date     2022-04-02
+  * @version  v2.0.5
+  * @date     2022-05-20
   * @brief    at32f413xx devices vector table for gcc toolchain.
   *           this module performs:
   *           - set the initial sp
