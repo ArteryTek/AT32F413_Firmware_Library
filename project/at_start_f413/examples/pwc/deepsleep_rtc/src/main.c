@@ -1,8 +1,8 @@
 /**
   **************************************************************************
   * @file     main.c
-  * @version  v2.0.5
-  * @date     2022-05-20
+  * @version  v2.0.6
+  * @date     2022-06-28
   * @brief    main program
   **************************************************************************
   *                       Copyright notice & Disclaimer
@@ -172,9 +172,6 @@ int main(void)
 
     /* disable systick */
     SysTick->CTRL &= (uint32_t)0xFFFFFFFE;
-
-    /* congfig the voltage regulator mode */
-    pwc_voltage_regulate_set(PWC_REGULATOR_LOW_POWER);
 
     /* enter deep sleep mode */
     pwc_deep_sleep_mode_enter(PWC_DEEP_SLEEP_ENTER_WFI);

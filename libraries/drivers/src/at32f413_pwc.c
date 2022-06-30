@@ -1,8 +1,8 @@
 /**
   **************************************************************************
   * @file     at32f413_pwc.c
-  * @version  v2.0.5
-  * @date     2022-05-20
+  * @version  v2.0.6
+  * @date     2022-06-28
   * @brief    contains all the functions for the pwc firmware library
   **************************************************************************
   *                       Copyright notice & Disclaimer
@@ -200,19 +200,6 @@ void pwc_deep_sleep_mode_enter(pwc_deep_sleep_enter_type pwc_deep_sleep_enter)
     __WFI();
   }
   SCB->SCR &= (uint32_t)~0x4;
-}
-
-/**
-  * @brief  regulate low power consumption in the deep sleep mode
-  * @param  pwc_regulator: set the regulator state.
-  *         this parameter can be one of the following values:
-  *         - PWC_REGULATOR_ON
-  *         - PWC_REGULATOR_LOW_POWER
-  * @retval none
-  */
-void pwc_voltage_regulate_set(pwc_regulator_type pwc_regulator)
-{
-  PWC->ctrl_bit.vrsel = pwc_regulator;
 }
 
 /**

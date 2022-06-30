@@ -1,8 +1,8 @@
 /**
   **************************************************************************
   * @file     main.c
-  * @version  v2.0.5
-  * @date     2022-05-20
+  * @version  v2.0.6
+  * @date     2022-06-28
   * @brief    main program
   **************************************************************************
   *                       Copyright notice & Disclaimer
@@ -180,14 +180,13 @@ int main(void)
       at32_led_off(LED2);
       at32_led_off(LED3);
       at32_led_off(LED4);
-      /* congfig the voltage regulator mode */
-      pwc_voltage_regulate_set(PWC_REGULATOR_LOW_POWER);
 
       /* enter deep sleep mode */
       pwc_deep_sleep_mode_enter(PWC_DEEP_SLEEP_ENTER_WFI);
+      
       /* wait clock stable */
-
       system_clock_recover();
+      
       ((mouse_type *)(usb_core_dev.class_handler->pdata))->hid_suspend_flag = 0;
       at32_led_on(LED2);
       at32_led_on(LED3);

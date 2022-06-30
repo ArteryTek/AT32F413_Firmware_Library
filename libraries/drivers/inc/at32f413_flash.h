@@ -1,8 +1,8 @@
 /**
   **************************************************************************
   * @file     at32f413_flash.h
-  * @version  v2.0.5
-  * @date     2022-05-20
+  * @version  v2.0.6
+  * @date     2022-06-28
   * @brief    at32f413 flash header file
   **************************************************************************
   *                       Copyright notice & Disclaimer
@@ -600,7 +600,7 @@ error_status flash_slib_disable(uint32_t pwd);
 uint32_t flash_slib_remaining_count_get(void);
 flag_status flash_slib_state_get(void);
 uint16_t flash_slib_start_sector_get(void);
-uint16_t flash_slib_datstart_sector_get(void);
+uint16_t flash_slib_datastart_sector_get(void);
 uint16_t flash_slib_end_sector_get(void);
 uint32_t flash_crc_calibrate(uint32_t start_sector, uint32_t sector_cnt);
 
