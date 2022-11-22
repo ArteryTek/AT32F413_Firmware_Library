@@ -1,8 +1,6 @@
 /**
   **************************************************************************
   * @file     at32f413_tmr.c
-  * @version  v2.0.7
-  * @date     2022-08-16
   * @brief    contains all the functions for the tmr firmware library
   **************************************************************************
   *                       Copyright notice & Disclaimer
@@ -71,16 +69,20 @@ void tmr_reset(tmr_type *tmr_x)
     crm_periph_reset(CRM_TMR4_PERIPH_RESET, TRUE);
     crm_periph_reset(CRM_TMR4_PERIPH_RESET, FALSE);
   }
+#if defined (AT32F413TBU7) || defined (AT32F413Rx) || defined (AT32F413Cx) || \
+    defined (AT32F413Kx)
   else if(tmr_x == TMR5)
   {
     crm_periph_reset(CRM_TMR5_PERIPH_RESET, TRUE);
     crm_periph_reset(CRM_TMR5_PERIPH_RESET, FALSE);
   }
+#if defined (AT32F413CCU7) || defined (AT32F413CCT7) || defined (AT32F413RCT7)
   else if(tmr_x == TMR8)
   {
     crm_periph_reset(CRM_TMR8_PERIPH_RESET, TRUE);
     crm_periph_reset(CRM_TMR8_PERIPH_RESET, FALSE);
   }
+#endif
   else if(tmr_x == TMR9)
   {
     crm_periph_reset(CRM_TMR9_PERIPH_RESET, TRUE);
@@ -96,6 +98,7 @@ void tmr_reset(tmr_type *tmr_x)
     crm_periph_reset(CRM_TMR11_PERIPH_RESET, TRUE);
     crm_periph_reset(CRM_TMR11_PERIPH_RESET, FALSE);
   }
+#endif
 }
 
 /**
@@ -750,7 +753,12 @@ void tmr_one_cycle_mode_enable(tmr_type *tmr_x, confirm_state new_state)
 void tmr_32_bit_function_enable (tmr_type *tmr_x, confirm_state new_state)
 {
   /* tmr 32 bit function(plus mode) enable,only for TMR2/TMR5 */
-  if((tmr_x == TMR2) || (tmr_x == TMR5))
+  if((tmr_x == TMR2)
+#if defined (AT32F413TBU7) || defined (AT32F413Rx) || defined (AT32F413Cx) || \
+    defined (AT32F413Kx)
+     || (tmr_x == TMR5)
+#endif
+  )
   {
     tmr_x->ctrl1_bit.pmen = new_state;
   }
