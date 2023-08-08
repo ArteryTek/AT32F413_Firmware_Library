@@ -34,7 +34,7 @@
   * @{
   */
 
-/** @addtogroup USB_IAP_app_led4_toggle
+/** @addtogroup USB_iap_app_led4_toggle
   * @{
   */
 
@@ -149,7 +149,7 @@ void usb_delay_us(uint32_t us)
 int main(void)
 {
   /* config vector table offset */
-  nvic_vector_table_set(NVIC_VECTTAB_FLASH, 0x4000);
+  nvic_vector_table_set(NVIC_VECTTAB_FLASH, 0x6000);
 
   system_clock_config();
 

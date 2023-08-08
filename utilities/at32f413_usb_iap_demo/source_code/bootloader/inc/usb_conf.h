@@ -34,11 +34,11 @@ extern "C" {
 #include "at32f413_board.h"
 #include "stdio.h"
 
-/** @addtogroup AT32F413_periph_examples
+/** @addtogroup UTILITIES_examples
   * @{
   */
 
-/** @addtogroup 413_USB_device_hid_iap
+/** @addtogroup USB_iap_bootloader
   * @{
   */
 
@@ -110,5 +110,3 @@ void usb_delay_us(uint32_t us);
 #endif
 
 #endif
-
-

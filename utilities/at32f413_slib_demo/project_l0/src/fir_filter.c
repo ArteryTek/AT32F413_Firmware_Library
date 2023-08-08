@@ -76,8 +76,8 @@ static float32_t firStateF32[BLOCK_SIZE + NUM_TAPS - 1] ;
 void FIR_lowpass_filter(float32_t * pSrc, float32_t * pDst, uint32_t testlengthsamples)
 {
   uint32_t i;
-	uint32_t blockSize = BLOCK_SIZE;
-	uint32_t numBlocks = testlengthsamples/BLOCK_SIZE;
+  uint32_t blockSize = BLOCK_SIZE;
+  uint32_t numBlocks = testlengthsamples/BLOCK_SIZE;
   arm_fir_instance_f32 S;
 
 

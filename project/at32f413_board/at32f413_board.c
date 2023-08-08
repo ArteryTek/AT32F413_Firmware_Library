@@ -22,7 +22,6 @@
   *
   **************************************************************************
   */
-
 #include "at32f413_board.h"
 
 /** @addtogroup AT32F413_board
@@ -84,7 +83,7 @@ static __IO uint32_t fac_ms;
 #else
   #define PUTCHAR_PROTOTYPE int fputc(int ch, FILE *f)
 #endif
-
+  
 /**
   * @brief  retargets the c library printf function to the usart.
   * @param  none
@@ -93,16 +92,24 @@ static __IO uint32_t fac_ms;
 PUTCHAR_PROTOTYPE
 {
   while(usart_flag_get(PRINT_UART, USART_TDBE_FLAG) == RESET);
-  usart_data_transmit(PRINT_UART, ch);
+  usart_data_transmit(PRINT_UART, (uint16_t)ch);
+  while(usart_flag_get(PRINT_UART, USART_TDC_FLAG) == RESET);
   return ch;
 }
 
+#if (defined (__GNUC__) && !defined (__clang__)) || (defined (__ICCARM__))
 #if defined (__GNUC__) && !defined (__clang__)
 int _write(int fd, char *pbuffer, int size)
+#elif defined ( __ICCARM__ )
+#pragma module_name = "?__write"
+int __write(int fd, char *pbuffer, int size)
+#endif
 {
   for(int i = 0; i < size; i ++)
   {
-    __io_putchar(*pbuffer++);
+    while(usart_flag_get(PRINT_UART, USART_TDBE_FLAG) == RESET);
+    usart_data_transmit(PRINT_UART, (uint16_t)(*pbuffer++));
+    while(usart_flag_get(PRINT_UART, USART_TDC_FLAG) == RESET);
   }
 
   return size;
