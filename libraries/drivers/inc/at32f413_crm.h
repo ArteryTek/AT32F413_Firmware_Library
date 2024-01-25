@@ -137,7 +137,7 @@ typedef enum
   CRM_CAN1_PERIPH_CLOCK                  = MAKE_VALUE(0x1C, 25), /*!< can1 periph clock */
   CRM_BPR_PERIPH_CLOCK                   = MAKE_VALUE(0x1C, 27), /*!< bpr periph clock */
   CRM_PWC_PERIPH_CLOCK                   = MAKE_VALUE(0x1C, 28), /*!< pwc periph clock */
-  CRM_CAN2_PERIPH_CLOCK                  = MAKE_VALUE(0x1C, 31), /*!< can2 periph clock */
+  CRM_CAN2_PERIPH_CLOCK                  = MAKE_VALUE(0x1C, 31)  /*!< can2 periph clock */
 
 } crm_periph_clock_type;
 
@@ -181,7 +181,7 @@ typedef enum
   CRM_CAN1_PERIPH_RESET                  = MAKE_VALUE(0x10, 25), /*!< can1 periph reset */
   CRM_BPR_PERIPH_RESET                   = MAKE_VALUE(0x10, 27), /*!< bpr periph reset */
   CRM_PWC_PERIPH_RESET                   = MAKE_VALUE(0x10, 28), /*!< pwc periph reset */
-  CRM_CAN2_PERIPH_RESET                  = MAKE_VALUE(0x10, 31), /*!< can2 periph reset */
+  CRM_CAN2_PERIPH_RESET                  = MAKE_VALUE(0x10, 31)  /*!< can2 periph reset */
 
 } crm_periph_reset_type;
 

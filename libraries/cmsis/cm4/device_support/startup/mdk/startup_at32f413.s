@@ -1,6 +1,6 @@
 ;**************************************************************************
-;* @file     startup_at32f403a_407.s
-;* @brief    at32f403a_407 startup file for keil
+;* @file     startup_at32f413.s
+;* @brief    at32f413 startup file for keil
 ;* <<< Use Configuration Wizard in Context Menu >>>  
 ;**************************************************************************
 ;
