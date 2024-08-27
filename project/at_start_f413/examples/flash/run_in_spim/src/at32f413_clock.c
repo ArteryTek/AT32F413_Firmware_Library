@@ -31,14 +31,14 @@
   *         system clock (sclk)   = hext / 2 * pll_mult
   *         system clock source   = pll (hext)
   *         - hext                = HEXT_VALUE
-  *         - sclk                = 192000000
+  *         - sclk                = 120000000
   *         - ahbdiv              = 1
-  *         - ahbclk              = 192000000
+  *         - ahbclk              = 120000000
   *         - apb2div             = 2
-  *         - apb2clk             = 96000000
+  *         - apb2clk             = 60000000
   *         - apb1div             = 2
-  *         - apb1clk             = 96000000
-  *         - pll_mult            = 48
+  *         - apb1clk             = 60000000
+  *         - pll_mult            = 30
   *         - pll_range           = GT72MHZ (greater than 72 mhz)
   * @param  none
   * @retval none
@@ -56,7 +56,7 @@ void system_clock_config(void)
   }
 
   /* config pll clock resource */
-  crm_pll_config(CRM_PLL_SOURCE_HEXT_DIV, CRM_PLL_MULT_48, CRM_PLL_OUTPUT_RANGE_GT72MHZ);
+  crm_pll_config(CRM_PLL_SOURCE_HEXT_DIV, CRM_PLL_MULT_30, CRM_PLL_OUTPUT_RANGE_GT72MHZ);
 
   /* enable pll */
   crm_clock_source_enable(CRM_CLOCK_SOURCE_PLL, TRUE);
