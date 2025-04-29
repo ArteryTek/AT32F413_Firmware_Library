@@ -6,12 +6,14 @@
   */
 
   this demo is based on the at-start board, in this demo, shows how to use
-  dma recieve data. spi3 use jtag pin as spi pin,and config spi in hardware
+  dma recieve data. spi1 use jtag pin as spi pin,and config spi in hardware
   cs mode.
   the pins connection as follow:
-  - spi2 slaver               spi1 master
-  - pb12(cs)        <--->     pa15(cs)
+  - spi2 slave                spi1 master
+    pb12(cs)        <--->     pa15(cs)
     pb13(sck)       <--->     pb3(sck)
-    pb14(miso)      <--->     pb5(mosi)
+    pb14(miso)      <--->     pb4(miso)
+    pb15(mosi)      <--->     pb5(mosi)
 
-  for more detailed information. please refer to the application note document AN0102.
+  for more detailed information. please refer to the application note document AN0102.
+

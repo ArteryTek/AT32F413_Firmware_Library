@@ -30,7 +30,7 @@
   * @{
   */
 
-/** @addtogroup 413_SPI_use_jtagpin_hardwarecs_dma
+/** @addtogroup 413_SPI_halfduplex_dma_jtagpin
   * @{
   */
 

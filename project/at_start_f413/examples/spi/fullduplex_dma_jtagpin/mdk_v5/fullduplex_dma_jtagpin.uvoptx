@@ -22,7 +22,7 @@
   </DaveTm>
 
   <Target>
-    <TargetName>use_jtagpin_hardwarecs_dma</TargetName>
+    <TargetName>fullduplex_dma_jtagpin</TargetName>
     <ToolsetNumber>0x4</ToolsetNumber>
     <ToolsetName>ARM-ADS</ToolsetName>
     <TargetOption>

@@ -24,12 +24,13 @@
 
 /* includes ------------------------------------------------------------------*/
 #include "at32f413_int.h"
+#include "at32f413_board.h"
 
 /** @addtogroup AT32F413_periph_examples
   * @{
   */
 
-/** @addtogroup 413_I2S_halfduplex_interrupt
+/** @addtogroup 413_SPI_fullduplex_dma_jtagpin
   * @{
   */
 
@@ -137,3 +138,6 @@ void SysTick_Handler(void)
 /**
   * @}
   */
+
+
+

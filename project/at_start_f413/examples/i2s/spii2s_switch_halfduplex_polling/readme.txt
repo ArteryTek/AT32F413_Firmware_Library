@@ -9,10 +9,9 @@
   mode how to use polling transfer data. use the mode switch to realize spi and
   i2s communication.
   the pins connection as follow:
-  - pb0 as mck out
   - i2s2 slaver        i2s1 master
-  - pb12     <--->     pa4(ws)
-  - pb13     <--->     pa5(ck)
-  - pb15     <--->     pa7(sd)
+  - pb12     <--->     pa15(ws)
+  - pb13     <--->     pb3(ck)
+  - pb15     <--->     pb5(sd)
 
   for more detailed information. please refer to the application note document AN0102.
