@@ -3,7 +3,8 @@
   * @file     at32f413_int.c
   * @brief    main interrupt service routines.
   **************************************************************************
-  *                       Copyright notice & Disclaimer
+  *
+  * Copyright (c) 2025, Artery Technology, All rights reserved.
   *
   * The software Board Support Package (BSP) that is made available to
   * download from Artery official website is the copyrighted work of Artery.
@@ -24,8 +25,6 @@
 
 /* includes ------------------------------------------------------------------*/
 #include "at32f413_int.h"
-#include "at32f413_board.h"
-
 
 /** @addtogroup AT32F413_periph_examples
   * @{

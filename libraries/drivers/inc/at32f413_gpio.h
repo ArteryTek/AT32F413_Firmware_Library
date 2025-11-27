@@ -3,7 +3,8 @@
   * @file     at32f413_gpio.h
   * @brief    at32f413 gpio header file
   **************************************************************************
-  *                       Copyright notice & Disclaimer
+  *
+  * Copyright (c) 2025, Artery Technology, All rights reserved.
   *
   * The software Board Support Package (BSP) that is made available to
   * download from Artery official website is the copyrighted work of Artery.
@@ -151,9 +152,9 @@ extern "C" {
 
 #define I2C1_GMUX_0001                   IOMUX_MAKE_VALUE(0x28, 4, 4, 0x01)  /*!< i2c1_scl(pb8), i2c1_sda(pb9) */
 #define I2C1_GMUX_0011                   IOMUX_MAKE_VALUE(0x28, 4, 4, 0x03)  /*!< i2c1_scl(pf6), i2c1_sda(pf7) */
-#define I2C2_GMUX_0001                   IOMUX_MAKE_VALUE(0x28, 8, 4, 0x01)  /*!< i2c2_scl(pf6), i2c2_sda(pf7) */
-#define I2C2_GMUX_0010                   IOMUX_MAKE_VALUE(0x28, 8, 4, 0x01)  /*!< i2c2_scl(pa8), i2c2_sda(pc9) */
-#define I2C2_GMUX_0011                   IOMUX_MAKE_VALUE(0x28, 8, 4, 0x01)  /*!< i2c2_scl(pa8), i2c2_sda(pb4) */
+#define I2C2_GMUX_0001                   IOMUX_MAKE_VALUE(0x28, 8, 4, 0x01)  /*!< i2c2_scl(pa8), i2c2_sda(pc9), i2c2_smba(pa9) */
+#define I2C2_GMUX_0010                   IOMUX_MAKE_VALUE(0x28, 8, 4, 0x02)  /*!< i2c2_scl(pa8), i2c2_sda(pb4), i2c2_smba(pa9) */
+#define I2C2_GMUX_0011                   IOMUX_MAKE_VALUE(0x28, 8, 4, 0x03)  /*!< i2c2_scl(pf6), i2c2_sda(pf7), i2c2_smba(pa9) */
 #define SPI1_GMUX_0001                   IOMUX_MAKE_VALUE(0x28, 16, 4, 0x01) /*!< spi1_cs/i2s1_ws(pa15), spi1_sck/i2s1_ck(pb3), spi1_miso(pb4), spi1_mosi/i2s1_sd(pb5), i2s1_mck(pb6) */
 #define SPI2_GMUX_0001                   IOMUX_MAKE_VALUE(0x28, 20, 4, 0x01) /*!< spi2_cs/i2s2_ws(pa15), spi2_sck/i2s2_ck(pb3), spi2_miso(pb4), spi2_mosi/i2s2_sd(pb5), i2s2_mck(pc7) */
 

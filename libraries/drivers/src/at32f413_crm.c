@@ -3,7 +3,8 @@
   * @file     at32f413_crm.c
   * @brief    contains all the functions for the crm firmware library
   **************************************************************************
-  *                       Copyright notice & Disclaimer
+  *
+  * Copyright (c) 2025, Artery Technology, All rights reserved.
   *
   * The software Board Support Package (BSP) that is made available to
   * download from Artery official website is the copyrighted work of Artery.
@@ -609,8 +610,31 @@ void crm_pll_config(crm_pll_clock_source_type clock_source, crm_pll_mult_type mu
   */
 void crm_sysclk_switch(crm_sclk_type value)
 {
+  volatile uint32_t i;
+  volatile uint8_t pwc_state; 
+  if(value == CRM_SCLK_PLL)
+  {
+    pwc_state = CRM->apb1en_bit.pwcen;
+    if(pwc_state == 0)
+      crm_periph_clock_enable(CRM_PWC_PERIPH_CLOCK, TRUE);
+    *(__IO uint32_t *)0x40007020 = 0x0A;
+    for(i = 0; i < 80; i++) 
+    {
+      __NOP();
+    }
+  }
   CRM->cfg_bit.sclksel = value;
   DUMMY_NOP();
+  if(value == CRM_SCLK_PLL)
+  {
+    *(__IO uint32_t *)0x40007020 = 0x00;
+    for(i = 0; i < 1500; i++) 
+    {
+      __NOP();
+    }
+    if(pwc_state == 0)
+      crm_periph_clock_enable(CRM_PWC_PERIPH_CLOCK, FALSE);
+  }  
 }
 
 /**
